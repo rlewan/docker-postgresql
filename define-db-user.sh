@@ -7,14 +7,14 @@ then
     exit -1
 fi
 
-if ! [ -d "docker-entrypoint-initdb.d" ];
+if ! [ -d "db-users" ];
 then
-    mkdir "docker-entrypoint-initdb.d"
+    mkdir "db-users"
 fi
 
 USER_NAME="$1"
 
-cat > "docker-entrypoint-initdb.d/add-$USER_NAME-user-and-db.sh" <<-EOSCRIPT
+cat > "db-users/add-$USER_NAME-user-and-db.sh" <<-EOSCRIPT
 #!/bin/bash
 set -e
 
