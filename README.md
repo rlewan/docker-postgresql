@@ -1,6 +1,6 @@
 # docker-postgresql
 
-A simple project to play around with docker PostgreSQL container. Extends the [postgres](https://hub.docker.com/_/postgres/) image from Docker Hub to allow setting up additional users and corresponding databases on container initialization.
+A simple project to play around with docker [PostgreSQL](https://www.postgresql.org/) container. Extends the [postgres](https://hub.docker.com/_/postgres/) image from Docker Hub to allow setting up additional users and corresponding databases on container initialization.
 
 ## Sample usage
 
@@ -17,11 +17,12 @@ db-users:
 add-ann-user-and-db.sh add-bob-user-and-db.sh
 ```
 
-These scripts will be copied to the customized container and executed by the root database server user.
+These scripts will be copied to the customized container and executed by the database server admin user.
 
 After that run the `dockerize.sh` script to build the custom image and run it. Resulting PostgreSQL server instance will contain two additional databases owned by corresponding users.
 
-## Current PostgreSQL server container settings
+## Current settings
 
-- PostgreSQL admin user name, password and default database are all `postgres`
-- the default database server port `5432` is both forwarded to the host and exposed to other containers.
+- PostgreSQL version is **9.5**,
+- PostgreSQL admin user name, password and default database are all **postgres**,
+- the default database server port **5432** is both forwarded to the host and exposed to other containers.
