@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-if [ -z "$1" ];
+if [[ "$#" -eq 0 ]];
 then
-    echo "User name not provided"
+    echo "User name(s) not provided"
     exit -1
 fi
 
@@ -12,7 +12,8 @@ then
     mkdir "db-users"
 fi
 
-USER_NAME="$1"
+for USER_NAME in "$@"
+do
 
 cat > "db-users/add-$USER_NAME-user-and-db.sh" <<-EOSCRIPT
 #!/bin/bash
@@ -24,4 +25,6 @@ psql -v ON_ERROR_STOP=1 --username "\$POSTGRES_USER" <<-EOSQL
     GRANT ALL PRIVILEGES ON DATABASE $USER_NAME TO $USER_NAME;
 EOSQL
 EOSCRIPT
+
+done
 

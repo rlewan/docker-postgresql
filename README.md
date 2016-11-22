@@ -7,8 +7,7 @@ A simple project to play around with docker [PostgreSQL](https://www.postgresql.
 Define two new users which should be created on the PostgreSQL server:
 
 ```
-$ ./define-db-user.sh bob
-$ ./define-db-user.sh ann
+$ ./define-db-user.sh ann bob
 ```
 This will create a new directory with shell scripts inside:
 
