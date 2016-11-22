@@ -1,6 +1,6 @@
 # docker-postgresql
 
-A simple project to play around with docker postgres image. Extends the [postgres](https://hub.docker.com/_/postgres/) image from Docker Hub to allow setting up additional users and corresponding databases on container initialization.
+A simple project to play around with docker PostgreSQL container. Extends the [postgres](https://hub.docker.com/_/postgres/) image from Docker Hub to allow setting up additional users and corresponding databases on container initialization.
 
 ## Sample usage
 
