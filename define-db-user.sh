@@ -7,7 +7,7 @@ then
     exit -1
 fi
 
-if ! [ -d "db-users" ];
+if ! [[ -d "db-users" ]];
 then
     mkdir "db-users"
 fi
@@ -27,4 +27,3 @@ EOSQL
 EOSCRIPT
 
 done
-
